@@ -6,7 +6,7 @@ Written in C, this application is intended to hide text and images within anothe
 
 * Linux Mint
 * GCC version 5.4.0
-* libpng (`sudo apt install zlib libpng`)
+* libpng (`sudo apt install zlib1g-dev libpng-dev`)
 
 ## To Run
 
