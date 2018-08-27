@@ -8,10 +8,12 @@ LIBS=-lm -lpng
 _DEPS = steganography.h image_handler.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
+
 _OBJ = main.o steganography.o image_handler.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
+	mkdir -p $(ODIR)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 hidden: $(OBJ)
