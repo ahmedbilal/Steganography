@@ -14,6 +14,4 @@ Run `make` to compile, and `./hidden` to execute the file.
 
 ## Progress
 
-Setting up the `libpng` library is currently in progress.
-
-Source: http://zarb.org/~gc/html/libpng.html
+The Issues tab will include what is left to complete.
