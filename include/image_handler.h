@@ -1,3 +1,19 @@
+/*****************************************************************************
+ * Purpose                                                                   *
+ *   This file contains the functionality relating to reading, writing, and  *
+ *   access to the images.                                                   *
+ *                                                                           *
+ * Resources                                                                 *
+ *   Initial source code for this file provided by                           *
+ *          http://zarb.org/%7Egc/html/libpng.html                           *
+ *   LibPNG                                                                  *
+ *                                                                           *
+ * Date          Issue No.   Author     Description                          *
+ * --------------------------------------------------------------------------*
+ * 26 Aug 2018               BJC        Initial commit.                      *
+ *                                                                           *
+ *****************************************************************************/
+
 #define PNG_DEBUG 3
 #include <png.h>
 #include <stdbool.h>

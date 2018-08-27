@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "include/steganography.h"
 
 int main(int argc, char **argv){
