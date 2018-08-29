@@ -24,8 +24,7 @@
  *                                                                            *
  * Date          Issue No.   Author     Description                           *
  * -------------------------------------------------------------------------- *
- * 28 Aug 2018               BJC        Separated into a function.            *
- * 27 Aug 2018               DMU        Initial commit.                       *
+ * 28 Aug 2018   3            BJC        Separated into a function.           *
  *                                                                            *
  *****************************************************************************/
 char* is_valid_name(char **name)

@@ -8,7 +8,8 @@
  *                                                                            *
  * Date          Issue No.   Author     Description                           *
  * -------------------------------------------------------------------------- *
- * 27 Aug 2018               DMU        Added the entry for the files.        *
+ * 28 Aug 2018   3           BJC        Moved reading in a file to utils.h    *
+ * 27 Aug 2018   3           DMU        Added command line input for files    *
  * 26 Aug 2018               BJC        Initial commit.                       *
  *                                                                            *
  *****************************************************************************/
