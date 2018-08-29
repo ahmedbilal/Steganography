@@ -29,7 +29,7 @@ void merge_images(char* one, char* two)
     for(int y=0; y < imOne.height; y++){
         for(int x=0; x < imOne.width; x++){
             get_RGB_value(&imOne, &pixelA, x, y);
-            printf("%04x %04x %04x\n", pixelA.r, pixelA.g, pixelA.b);
+            printf("%02x %02x %02x\n", pixelA.r, pixelA.g, pixelA.b);
         } 
     }
 }

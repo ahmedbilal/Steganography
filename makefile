@@ -5,11 +5,10 @@ CFLAGS=-I$(IDIR)
 ODIR=obj
 LDIR=lib
 LIBS=-lm -lpng
-_DEPS = steganography.h image_handler.h
+_DEPS = steganography.h image_handler.h util.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-
-_OBJ = main.o steganography.o image_handler.o
+_OBJ = main.o steganography.o image_handler.o util.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
