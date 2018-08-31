@@ -153,6 +153,7 @@ void write_png_file(char* file_name, Image* image)
 
     png_write_image(image->png_ptr, image->row_pointers);
 
+
     /* end write */
     if (setjmp(png_jmpbuf(image->png_ptr)))
         abort_("[write_png_file] Error during end of write");
@@ -160,10 +161,10 @@ void write_png_file(char* file_name, Image* image)
     png_write_end(image->png_ptr, NULL);
 
     /* cleanup heap allocation */
-    for(int y=0; y<image->height; y++)
+    for (int y=0; y<image->height; y++)
         free(image->row_pointers[y]);
     free(image->row_pointers);
-    free(image);
+
     fclose(fp);
 }
 
@@ -187,5 +188,12 @@ void get_RGB_value(Image* image, RGB* rgb, int x, int y)
     rgb->r = pixel[0];
     rgb->g = pixel[1];
     rgb->b = pixel[2];
-    return;
+}
+
+void set_RGB_value(Image* image, RGB* rgb, int x, int y)
+{
+    png_byte* pixel = &(image->row_pointers[y][x*4]);
+    pixel[0] = rgb->r;
+    pixel[1] = rgb->g;
+    pixel[2] = rgb->b;
 }

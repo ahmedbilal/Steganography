@@ -36,10 +36,10 @@ int main(int argc, char ** argv)
     
     if(is_valid_name(&imOne))
     {
-        if(is_valid_name(&imTwo))
-        {
-            merge_images(imOne, imTwo);
-        } 
+        char *text = "Hello world!";
+        hide_text(imOne, text);
+        printf("Text hidden!\n");
+        unhide_text("result.png");
     }
 }
 
