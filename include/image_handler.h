@@ -38,3 +38,4 @@ typedef struct Image_t{
 bool read_png_file(char* file_name, Image* image);
 void write_png_file(char* file_name, Image* image);
 void get_RGB_value(Image* image, RGB* rgb, int x, int y);
+void set_RGB_value(Image* image, RGB* rgb, int x, int y);

@@ -33,9 +33,11 @@ char* is_valid_name(char **name)
     char *ext;
     ext = strchr(*name, ch);
 
-    if(ext == NULL) 
+    if(ext == NULL)
+    { 
+        *name = realloc(*name, sizeof(char) + 5);
         strcat(*name, ".png"); 
-
+    }
     ext = strchr(*name, ch);
 
     if(strncmp(ext, ".png", 4)){ 
