@@ -10,7 +10,7 @@ Written in C, this application is intended to hide text and images within anothe
 
 ## To Run
 
-Run `make` to compile, and `./hidden` to execute the file.
+Run `make` to compile, and `./hidden <filename_1>[.png] <filename_2>[.png]` to execute the file.
 
 ## Progress
 
