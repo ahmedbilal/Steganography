@@ -13,5 +13,5 @@
  *****************************************************************************/
 
 void hide_image(const char* destination, const char* source);
-void hide_text (const char* image,     const char* text);
+void hide_text (const char* image, char *outimage, const char* text);
 void unhide_text(const char* image);

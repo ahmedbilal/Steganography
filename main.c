@@ -22,24 +22,63 @@
 
 int main(int argc, char ** argv)
 {
-    if(argc != 3)
-    {
-        printf("Invalid number of arguments.\n");
+    const char * usage_msg = "\
+Usage: ./hidden option [infile] [outfile]\n\n \
+    option can be -h or -u\n \
+                  -h: hide\n \
+                  -u: unhide\n\n \
+    infile: input file\n \
+    outfile: output file\n\n \
+    Examples:\n \
+        ./hidden -u input.png\n \
+        ./hidden -h input.png output.png\n";
+
+    char option = 0;
+    char * input_file = NULL;
+    char * output_file = NULL;
+
+
+    if (argc < 2) {
+        printf("%s", usage_msg);
         return -1;
     }
+    option = argv[1][1];
+
+    if (option == 'h') {
+        if (argc < 4) {
+            printf("%s", usage_msg);
+            return -1;
+        }
+    }
+    else if (option == 'u') {
+        if (argc < 3) {
+            printf("%s", usage_msg);
+            return -1;
+        }
+    }
+
+    input_file  = malloc(strlen(argv[2]) + 1);
+    strcpy(input_file, argv[2]);
+
+    if (option == 'h'){
+        output_file = malloc(strlen(argv[3]) + 1);
+        strcpy(output_file, argv[3]);
+    }
     
-    char *imOne = malloc(sizeof(argv[1]));
-    char *imTwo = malloc(sizeof(argv[2]));
-    
-    strcpy(imOne, argv[1]);
-    strcpy(imTwo, argv[2]);
-    
-    if(is_valid_name(&imOne))
+    if(is_valid_name(&input_file))
     {
-        char *text = "Hello world!";
-        hide_text(imOne, text);
-        printf("Text hidden!\n");
-        unhide_text("result.png");
+        if (option == 'u') {
+            unhide_text(input_file);
+            free(input_file);
+        }
+        else if (option == 'h') {
+            char *text = "Hello I am ABK";
+            hide_text(input_file, output_file, text);
+            printf("Text hidden!\n");
+            free(input_file);
+            free(output_file);
+        }
+        
     }
 }
 

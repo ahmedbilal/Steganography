@@ -107,7 +107,7 @@ int decode_text(RGB *sourcePixel)
  * 26 Aug 2018               BJC        Initial commit.                       *
  *                                                                            *
  *****************************************************************************/
-void hide_text(char *image, char *text)
+void hide_text(char *image, char *outimage, char *text)
 {
     Image imOne;
     read_png_file(image, &imOne);
@@ -147,7 +147,7 @@ void hide_text(char *image, char *text)
         }
     }
 
-    write_png_file("result.png", &imOne);
+    write_png_file(outimage, &imOne);
     printf("File written!\n");
 }
 
